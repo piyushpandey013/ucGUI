@@ -1,0 +1,28 @@
+Naming convention for config files
+
+  LCDConf_<LCD-Controller>_<Display-type><bpp>[A][B][C][I][P][R<degree>][S][X][X<n>][Y][Y<n>][W]_[<Module>]
+
+  <LCD-Controller>  e.g. 13705 or 1565                       #define LCD_CONTROLLER       <LCD-controller>
+  <Display-type>    "C" for color passiv
+                 or "D" for delta mode
+                 or "M" for monochrome
+                 or "T" for TFT
+  <bpp>          Bits per pixel. Usually 1,2,4,8,15 or 16    #define LCD_BITSPERPIXEL     <bpp>
+  [A]            if endian mode does not match               #define LCD_SWAP_BYTE_ORDER  1
+  [B]            if byte mode is used on                     #define LCD_BUSWIDTH 8
+                 controllers with 16 bit data bus
+  [C]            if Com Lookup is used                       #define LCD_LUT_COM0   e.g. 0,1,2,3,4,5,6,7,8,9 ...
+  [I]            Invert                                      #define LCD_REVERSE    1
+  [P]            if Palette is used                          #define LCD_PHYSCOLORS e.g. 0x000000,0x000080, ...
+  [R90]          if hardware rotates 90°
+  [R180]         if hardware rotates 180°
+  [R270]         if hardware rotates 270°
+  [S]            if Segment Lookup is used                   #define LCD_LUT_SEG0   e.g. 0,1,2,3,4,5,6,7,8,9 ...
+  [X]            if x is mirrored by software                #define LCD_MIRROR_X   1
+  [X<n>]         if horizontal axis is magnified factor n    #define LCD_XMAG 2     <n>
+  [Y]            if y is mirrored by software                #define LCD_MIRROR_Y   1
+  [Y<n>]         if vertical axis is magnified factor n      #define LCD_YMAG       <n>
+  [W]            if x/y axes are swapped                     #define LCD_SWAP_XY    1
+
+  [<Module>] Description of LCD-module.
+
